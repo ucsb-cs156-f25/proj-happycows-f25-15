@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f25/proj-happycows-f25-15
 owner: ucsb-cs156-f25
 repo_name: proj-happycows-f25-15
-pull_requests: []
+pull_requests: [{"author":{"id":"U_kgDOB1PefA","is_bot":false,"login":"guntashgill","name":""},"headRefName":"ggRestoreTitle","number":8,"title":"gg changed frontend name to HappyCows along with logo and included te…","url":"https://github.com/ucsb-cs156-f25/proj-happycows-f25-15/pull/8"}]
