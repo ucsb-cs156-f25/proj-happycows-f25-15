@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>118/118</span>
+                <span class='fraction'>141/141</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>118/118</span>
+                <span class='fraction'>141/141</span>
             </div>
         
             
@@ -230,7 +230,32 @@
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -255,6 +280,8 @@
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
@@ -302,6 +329,29 @@
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
@@ -410,7 +460,7 @@ import {
 &nbsp;
 /* Stryker disable StringLiteral, BooleanLiteral, ArrayDeclaration, MethodExpression, ArrowFunction, ConditionalExpression: "Exclude noisy UI-focused mutants for this component" */
 export default function AdminListCommonsV2() {
-  const { data: currentUser } = useCurrentUser();
+  const { data: _currentUser } = useCurrentUser();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [commonsToDelete, setCommonsToDelete] = useState(null);
@@ -419,9 +469,11 @@ export default function AdminListCommonsV2() {
     data: commons,
     error: _error,
     status: _status,
-  } = useBackend([
-    "/api/commons/allplus",
-  ], { method: "GET", url: "/api/commons/allplus" }, []);
+  } = useBackend(
+    ["/api/commons/allplus"],
+    { method: "GET", url: "/api/commons/allplus" },
+    [],
+  );
 &nbsp;
   const deleteMutation = useBackendMutation(
     cellToAxiosParamsDelete,
@@ -463,75 +515,98 @@ export default function AdminListCommonsV2() {
         &lt;/Row&gt;
 &nbsp;
         &lt;Row className="pt-3" xs={1} sm={2} md={3} lg={3}&gt;
-          {commons &amp;&amp; commons.map((c) =&gt; (
-            &lt;Col key={c.commons.id} className="mb-3"&gt;
-              &lt;Card&gt;
-                &lt;Card.Body&gt;
-                  &lt;Card.Title&gt;{c.commons.name}&lt;/Card.Title&gt;
-                  &lt;Card.Subtitle className="mb-2 text-muted"&gt;id: {c.commons.id}&lt;/Card.Subtitle&gt;
-                  &lt;Card.Text&gt;
-                    &lt;strong&gt;id:&lt;/strong&gt; {c.commons.id}&lt;br /&gt;
-                    &lt;strong&gt;Name:&lt;/strong&gt; {c.commons.name}&lt;br /&gt;
-                    &lt;strong&gt;Cow Price:&lt;/strong&gt; {c.commons.cowPrice}&lt;br /&gt;
-                    &lt;strong&gt;Milk Price:&lt;/strong&gt; {c.commons.milkPrice}&lt;br /&gt;
-                    &lt;strong&gt;Start Bal:&lt;/strong&gt; {c.commons.startingBalance}&lt;br /&gt;
-                    &lt;strong&gt;Starting Date:&lt;/strong&gt; {c.commons.startingDate ? String(c.commons.startingDate).slice(0,10) : ''}&lt;br /&gt;
-                    &lt;strong&gt;Last Date:&lt;/strong&gt; {c.commons.lastDate ? String(c.commons.lastDate).slice(0,10) : ''}&lt;br /&gt;
-                    &lt;strong&gt;Degrad Rate:&lt;/strong&gt; {c.commons.degradationRate}&lt;br /&gt;
-                    &lt;strong&gt;Show LrdrBrd?&lt;/strong&gt; {String(c.commons.showLeaderboard)}&lt;br /&gt;
-                    &lt;strong&gt;Show Chat?&lt;/strong&gt; {String(c.commons.showChat)}&lt;br /&gt;
-                    &lt;strong&gt;Tot Cows:&lt;/strong&gt; {c.totalCows}&lt;br /&gt;
-                    &lt;strong&gt;Cap / User:&lt;/strong&gt; {c.commons.capacityPerUser}&lt;br /&gt;
-                    &lt;strong&gt;Carry Cap:&lt;/strong&gt; {c.commons.carryingCapacity}&lt;br /&gt;
-                    &lt;strong&gt;Eff Cap:&lt;/strong&gt; {c.effectiveCapacity}
-                  &lt;/Card.Text&gt;
-                  &lt;div className="d-flex justify-content-between flex-wrap"&gt;
-                    &lt;div className="mb-2"&gt;
-                      &lt;Button
-                        variant="primary"
-                        onClick={() =&gt; manage(c.commons.id)}
-                        data-testid={`AdminListCommonsV2-Manage-${c.commons.id}`}
-                        className="me-2"
-                      &gt;
-                        Edit
-                      &lt;/Button&gt;
+          {commons &amp;&amp;
+            commons.map((c) =&gt; (
+              &lt;Col key={c.commons.id} className="mb-3"&gt;
+                &lt;Card&gt;
+                  &lt;Card.Body&gt;
+                    &lt;Card.Title&gt;{c.commons.name}&lt;/Card.Title&gt;
+                    &lt;Card.Subtitle className="mb-2 text-muted"&gt;
+                      id: {c.commons.id}
+                    &lt;/Card.Subtitle&gt;
+                    &lt;Card.Text&gt;
+                      &lt;strong&gt;id:&lt;/strong&gt; {c.commons.id}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Name:&lt;/strong&gt; {c.commons.name}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Cow Price:&lt;/strong&gt; {c.commons.cowPrice}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Milk Price:&lt;/strong&gt; {c.commons.milkPrice}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Start Bal:&lt;/strong&gt; {c.commons.startingBalance}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Starting Date:&lt;/strong&gt;{" "}
+                      {c.commons.startingDate
+                        ? String(c.commons.startingDate).slice(0, 10)
+                        : ""}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Last Date:&lt;/strong&gt;{" "}
+                      {c.commons.lastDate
+                        ? String(c.commons.lastDate).slice(0, 10)
+                        : ""}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Degrad Rate:&lt;/strong&gt; {c.commons.degradationRate}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Show LrdrBrd?&lt;/strong&gt;{" "}
+                      {String(c.commons.showLeaderboard)}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Show Chat?&lt;/strong&gt; {String(c.commons.showChat)}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Tot Cows:&lt;/strong&gt; {c.totalCows}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Cap / User:&lt;/strong&gt; {c.commons.capacityPerUser}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Carry Cap:&lt;/strong&gt; {c.commons.carryingCapacity}
+                      &lt;br /&gt;
+                      &lt;strong&gt;Eff Cap:&lt;/strong&gt; {c.effectiveCapacity}
+                    &lt;/Card.Text&gt;
+                    &lt;div className="d-flex justify-content-between flex-wrap"&gt;
+                      &lt;div className="mb-2"&gt;
+                        &lt;Button
+                          variant="primary"
+                          onClick={() =&gt; manage(c.commons.id)}
+                          data-testid={`AdminListCommonsV2-Manage-${c.commons.id}`}
+                          className="me-2"
+                        &gt;
+                          Edit
+                        &lt;/Button&gt;
 &nbsp;
-                      &lt;Button
-                        variant="danger"
-                        onClick={() =&gt; onDeleteClick(c.commons.id)}
-                        className="me-2"
-                      &gt;
-                        Delete
-                      &lt;/Button&gt;
+                        &lt;Button
+                          variant="danger"
+                          onClick={() =&gt; onDeleteClick(c.commons.id)}
+                          className="me-2"
+                        &gt;
+                          Delete
+                        &lt;/Button&gt;
 &nbsp;
-                      &lt;Button
-                        variant="secondary"
-                        onClick={() =&gt; leaderboard(c.commons.id)}
-                        className="me-2"
-                      &gt;
-                        Leaderboard
-                      &lt;/Button&gt;
+                        &lt;Button
+                          variant="secondary"
+                          onClick={() =&gt; leaderboard(c.commons.id)}
+                          className="me-2"
+                        &gt;
+                          Leaderboard
+                        &lt;/Button&gt;
 &nbsp;
-                      &lt;Button
-                        variant="success"
-                        href={`/api/commonstats/download?commonsId=${c.commons.id}`}
-                        className="me-2"
-                      &gt;
-                        Stats CSV
-                      &lt;/Button&gt;
+                        &lt;Button
+                          variant="success"
+                          href={`/api/commonstats/download?commonsId=${c.commons.id}`}
+                          className="me-2"
+                        &gt;
+                          Stats CSV
+                        &lt;/Button&gt;
 &nbsp;
-                      &lt;Button
-                        variant="info"
-                        onClick={() =&gt; announcements(c.commons.id)}
-                      &gt;
-                        Announcements
-                      &lt;/Button&gt;
+                        &lt;Button
+                          variant="info"
+                          onClick={() =&gt; announcements(c.commons.id)}
+                        &gt;
+                          Announcements
+                        &lt;/Button&gt;
+                      &lt;/div&gt;
                     &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/Card.Body&gt;
-              &lt;/Card&gt;
-            &lt;/Col&gt;
-          ))}
+                  &lt;/Card.Body&gt;
+                &lt;/Card&gt;
+              &lt;/Col&gt;
+            ))}
         &lt;/Row&gt;
         &lt;Modal
           data-testid="AdminListCommonsV2-Modal"
@@ -571,7 +646,7 @@ export default function AdminListCommonsV2() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-17T00:06:44.856Z
+                at 2025-11-17T00:14:00.600Z
             </div>
         <script src="../prettify.js"></script>
         <script>
